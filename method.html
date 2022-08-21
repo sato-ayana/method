@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Q1.プロパティーとメソッドの違い
+    // A1.プロパティーとは、「性別」や「年齢」など何らかの情報に名前をつけたもののことを指し、
+    // メソッドはそのプロパティが関数となってなんらかの処理をするもののことを指す。
+    const pet = {
+      name: "ポチ",
+      age: 5,
+      character: function() {
+        console.log("人懐っこい雑種の犬です。")
+      }
+    }
+    pet.character()
+
+    const newEmployee = {
+      name: "高橋",
+      age: 22,
+      introduction: function() {
+        console.log("宮崎県出身で、慶応大卒です。")
+      }
+    }
+    newEmployee.introduction()
+
+    const flower = {
+      name: "薔薇",
+      number: 108,
+      language: function() {
+        console.log("108本の薔薇の花言葉は「結婚してください」です。")
+      }
+    }
+    flower.language()
+// Q2
+    function fruit(name, price) {
+      const result = name + "の値段は" + price + "円です。";
+      return result
+    };
+    console.log(fruit("リンゴ",108));
+// Q3
+    function addTax(price, func) {
+      const taxPrice = Math.round(price * 1.10);
+    }
+    // トマトの税込み価格
+    function tomato(price, func) {
+      const name = "トマト";
+      func(name, addTax);
+    }
+    const price = function addTax(name, taxPrice) {
+    console.log(name + "の税込み価格は" + taxPrice + "円です。");
+  }
+    tomato(100,price);
+    // 玉ねぎの税込み価格
+  </script>
+</body>
+</html>
